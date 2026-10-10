@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cattle-primary: #365314;
+  --color-cattle-accent: #65a30d;
+  --color-cattle-bg: #f7fee7;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl p-6 shadow-sm border border-stone-200 transition-all duration-200 hover:shadow-md;
+  }
+
+  .btn-primary {
+    @apply bg-[#365314] hover:bg-[#2e4610] text-white font-medium px-4 py-2.5 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#365314] focus:ring-offset-2 flex items-center justify-center gap-2 cursor-pointer;
+  }
+
+  .badge {
+    @apply px-3 py-1 text-xs font-semibold rounded-full inline-flex items-center gap-1.5;
+  }
+}

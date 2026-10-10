@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CattleTrack - Smart Livestock Management & GPS Tracking</title>
+    <!-- Vite CSS Entry -->
+    <link rel="stylesheet" href="./src/style.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-[#f7fee7]/30 text-stone-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="h-20 bg-white/90 backdrop-blur-md border-b border-stone-200 sticky top-0 z-50 px-6 lg:px-12 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#365314] text-white flex items-center justify-center font-bold text-lg shadow-md">
+                <i class="fa-solid fa-cow"></i>
+            </div>
+            <span class="font-bold text-xl text-stone-900 tracking-tight">CattleTrack</span>
+        </div>
+
+        <!-- INTEGRATED NAVIGATION LINKS -->
+        <nav class=" px-4 py-2 space-x-2 overflow-x-auto hidden md:flex items-center">
+            <a href="dashboard.html" class="flex items-center gap-2 px-3 py-2 rounded-xl bg-lime-50 text-[#365314] font-medium transition-colors hover:bg-lime-100 focus:outline-none focus:ring-2 focus:ring-[#365314] shrink-0 text-sm">
+                <i class="fa-solid fa-chart-pie w-4"></i> Dashboard
+            </a>
+            <a href="admin.html" class="flex items-center gap-2 px-3 py-2 rounded-xl text-stone-600 hover:bg-stone-50 hover:text-stone-900 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#365314] shrink-0 text-sm">
+                <i class="fa-solid fa-location-dot w-4"></i> GPS Tracking
+            </a>
+            <a href="admin.html" class="flex items-center gap-2 px-3 py-2 rounded-xl text-stone-600 hover:bg-stone-50 hover:text-stone-900 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#365314] shrink-0 text-sm">
+                <i class="fa-solid fa-heart-pulse w-4"></i> Animal Health
+            </a>
+            <a href="admin.html" class="flex items-center gap-2 px-3 py-2 rounded-xl text-stone-600 hover:bg-stone-50 hover:text-stone-900 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#365314] shrink-0 text-sm">
+                <i class="fa-solid fa-clipboard-user w-4"></i> Herd Records
+            </a>
+            <a href="admin.html" class="flex items-center gap-2 px-3 py-2 rounded-xl text-stone-600 hover:bg-stone-50 hover:text-stone-900 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#365314] shrink-0 text-sm">
+                <i class="fa-solid fa-triangle-exclamation w-4"></i> Security Alerts
+            </a>
+            <a href="admin.html" class="flex items-center gap-2 px-3 py-2 rounded-xl text-stone-600 hover:bg-stone-50 hover:text-stone-900 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#365314] shrink-0 text-sm">
+                <i class="fa-solid fa-gear w-4"></i> Settings
+            </a>
+        </nav>
+
+        
+    </header>
+
+    <!-- HERO BANNER WITH COW BACKGROUND IMAGE -->
+    <section class="relative bg-stone-900 text-white py-24 lg:py-36 px-6 lg:px-12 flex items-center justify-center overflow-hidden">
+        <!-- Background Image overlay with cows -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1600" alt="Cows grazing on a farm pasture" class="w-full h-full object-cover object-center opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-950/70 to-transparent"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-4xl w-full text-center lg:text-left space-y-6">
+            <span class="badge bg-lime-500/20 text-lime-300 border border-lime-500/30">
+                <i class="fa-solid fa-satellite-dish"></i> Next-Gen Smart AgriTech
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                Smart Livestock Tracking & <span class="text-lime-400">Health Monitoring</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-stone-300 max-w-2xl font-normal">
+                Empower your farm with real-time GPS collar telemetry, instant health fever alerts, and automated pasture rotation management.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                <a href="./admin.html" class="btn-primary w-full sm:w-auto text-base px-6 py-3.5 shadow-lg">
+                    Open Control Center <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#features" class="w-full sm:w-auto px-6 py-3.5 rounded-xl border border-white/20 font-medium hover:bg-white/10 transition-colors text-center">
+                    Explore Features
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <h2 class="text-3xl font-bold text-stone-900 tracking-tight">Built for Modern Livestock Farmers</h2>
+            <p class="text-stone-600 text-sm">Everything you need to secure your herds, monitor animal body temperature, and maximize farm productivity.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card space-y-3">
+                <div class="w-12 h-12 rounded-2xl bg-lime-50 text-[#365314] flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900">Real-Time GPS Collars</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Track exact herd location and movement across farm sectors with anti-theft geo-fence warnings.</p>
+            </div>
+
+            <div class="card space-y-3">
+                <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900">Automated Health Alerts</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Monitor body temperatures and heart telemetry to spot fevers and sickness before outbreaks happen.</p>
+            </div>
+
+            <div class="card space-y-3">
+                <div class="w-12 h-12 rounded-2xl bg-lime-50 text-[#365314] flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h3 class="text-xl font-bold text-stone-900">Pasture Capacity & Grazing</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">Optimize rotational grazing across paddocks to prevent overgrazing and improve soil sustainability.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-stone-900 text-stone-400 py-12 px-6 lg:px-12 mt-auto text-center border-t border-stone-800">
+        <p class="text-sm">© 2026 CattleTrack Smart Livestock Management. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
