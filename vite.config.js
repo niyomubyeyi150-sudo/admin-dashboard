@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: 'index.html',
+        brand:'dashboard.html',
       },
     },
   },
