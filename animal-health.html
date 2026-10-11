@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Health - Farm Admin Dashboard</title>
+    <!-- Tailwind CSS Output -->
+    <link rel="stylesheet" href="./dist/output.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-stone-50 font-sans text-stone-900 antialiased">
+
+    <div class="flex h-screen overflow-hidden">
+
+        <!-- Sidebar (Hidden on mobile, visible on lg screens) -->
+        <aside class="hidden lg:flex lg:w-64 flex-col border-r border-stone-200 bg-white">
+            <!-- Sidebar Header / Logo -->
+            <div class="flex h-16 items-center gap-2 px-6 border-b border-stone-100">
+                <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-lime-600 text-white">
+                    <i class="fa-solid fa-leaf text-base"></i>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-stone-900">AgriDashboard</span>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="flex flex-col gap-1 p-4">
+                <a href="dashboard.html" class="sidebar-link">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Dashboard
+                </a>
+                <a href="gps-tracking.html" class="sidebar-link">
+                    <i class="fa-solid fa-location-dot"></i>
+                    GPS Tracking
+                </a>
+                <a href="animal-health.html" class="sidebar-link-active">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    Animal Health
+                </a>
+                <a href="herd-records.html" class="sidebar-link">
+                    <i class="fa-solid fa-clipboard-user"></i>
+                    Herd Records
+                </a>
+                <a href="security-alerts.html" class="sidebar-link">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Security Alerts
+                </a>
+                <a href="settings.html" class="sidebar-link">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex flex-1 flex-col overflow-y-auto">
+
+            <!-- Top Bar -->
+            <header class="flex h-16 items-center justify-between border-b border-stone-200 bg-white px-4 lg:px-8">
+                <div class="flex items-center gap-4">
+                    <h1 class="text-xl font-bold text-stone-800">Animal Health Monitoring</h1>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <!-- Search Input -->
+                    <div class="relative hidden md:block">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400">
+                            <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                        </span>
+                        <input type="text" placeholder="Search animal ID..." 
+                               class="w-64 rounded-xl border border-stone-200 bg-stone-50 py-2 pl-9 pr-4 text-sm outline-none transition focus:border-lime-600 focus:bg-white">
+                    </div>
+
+                    <!-- User Avatar -->
+                    <div class="flex items-center gap-3 border-l border-stone-200 pl-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces" 
+                             alt="User Avatar" class="h-10 w-10 rounded-full object-cover">
+                        <div class="hidden md:block text-left">
+                            <p class="text-sm font-semibold text-stone-800">Nadine N.</p>
+                            <p class="text-xs text-stone-500">Admin</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Page Content -->
+            <main class="p-4 lg:p-8">
+                <div class="space-y-6">
+
+                    <!-- Health Stat Cards Summary -->
+                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                        <div class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-stone-500">Total Monitored</p>
+                            <p class="mt-2 text-2xl font-bold text-stone-800">248</p>
+                        </div>
+                        <div class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-stone-500">Healthy Status</p>
+                            <p class="mt-2 text-2xl font-bold text-emerald-600">235</p>
+                        </div>
+                        <div class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-stone-500">Under Treatment</p>
+                            <p class="mt-2 text-2xl font-bold text-amber-600">10</p>
+                        </div>
+                        <div class="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-stone-500">Critical Alerts</p>
+                            <p class="mt-2 text-2xl font-bold text-rose-600">3</p>
+                        </div>
+                    </div>
+
+                    <!-- Health Records Data Table -->
+                    <div class="rounded-2xl border border-stone-200 bg-white shadow-sm overflow-hidden">
+                        <div class="flex items-center justify-between p-6 border-b border-stone-100">
+                            <h2 class="text-base font-bold text-stone-800 flex items-center gap-2">
+                                <i class="fa-solid fa-notes-medical text-lime-600"></i> Livestock Health Logs
+                            </h2>
+                            <button class="rounded-xl bg-lime-600 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-lime-700">
+                                Log Checkup
+                            </button>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-stone-100 bg-stone-50 text-[11px] font-bold uppercase tracking-wider text-stone-500">
+                                        <th class="p-4 pl-6">Tag ID</th>
+                                        <th class="p-4">Species</th>
+                                        <th class="p-4">Condition</th>
+                                        <th class="p-4">Last Checkup</th>
+                                        <th class="p-4">Assigned Vet</th>
+                                        <th class="p-4 pr-6">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-100 text-sm">
+                                    <tr class="transition hover:bg-stone-50">
+                                        <td class="p-4 pl-6 font-semibold text-stone-800">#COW-401</td>
+                                        <td class="p-4 text-stone-600">Dairy Cattle</td>
+                                        <td class="p-4 text-stone-600">Routine Vaccination</td>
+                                        <td class="p-4 text-stone-500">Oct 10, 2026</td>
+                                        <td class="p-4 text-stone-600">Dr. Jean Bosco</td>
+                                        <td class="p-4 pr-6">
+                                            <span class="inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">Healthy</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="transition hover:bg-stone-50">
+                                        <td class="p-4 pl-6 font-semibold text-stone-800">#GOAT-112</td>
+                                        <td class="p-4 text-stone-600">Meat Goat</td>
+                                        <td class="p-4 text-stone-600">Hoof Infection Care</td>
+                                        <td class="p-4 text-stone-500">Oct 09, 2026</td>
+                                        <td class="p-4 text-stone-600">Dr. Alice Mukamana</td>
+                                        <td class="p-4 pr-6">
+                                            <span class="inline-flex rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700">Treatment</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="transition hover:bg-stone-50">
+                                        <td class="p-4 pl-6 font-semibold text-stone-800">#COW-209</td>
+                                        <td class="p-4 text-stone-600">Dairy Cattle</td>
+                                        <td class="p-4 text-stone-600">Fever & Lethargy</td>
+                                        <td class="p-4 text-stone-500">Oct 08, 2026</td>
+                                        <td class="p-4 text-stone-600">Dr. Jean Bosco</td>
+                                        <td class="p-4 pr-6">
+                                            <span class="inline-flex rounded-full bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-700">Critical</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="transition hover:bg-stone-50">
+                                        <td class="p-4 pl-6 font-semibold text-stone-800">#SHEEP-55</td>
+                                        <td class="p-4 text-stone-600">Dorper Sheep</td>
+                                        <td class="p-4 text-stone-600">Deworming</td>
+                                        <td class="p-4 text-stone-500">Oct 05, 2026</td>
+                                        <td class="p-4 text-stone-600">Dr. Alice Mukamana</td>
+                                        <td class="p-4 pr-6">
+                                            <span class="inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">Healthy</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>
