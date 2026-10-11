@@ -9,6 +9,8 @@ export default defineConfig({
       input: {
         home: 'index.html',
         brand:'dashboard.html',
+        gps:'gps-tracking.html',
+        health:'animal-health.html',
       },
     },
   },
